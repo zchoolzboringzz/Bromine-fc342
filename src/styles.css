@@ -73,9 +73,8 @@ label {
 }
 
 #omnibar button:not(.exclude-me button) {
-	@apply transition duration-300 ease-in-out hover:bg-overlay rounded-md p-1.5 shadow-md;
+  @apply hover:bg-overlay rounded-md p-1.5 shadow-md transition duration-300 ease-in-out;
 }
-
 
 [data-icon] {
   stroke-width: 3;

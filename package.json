@@ -1,43 +1,44 @@
 {
-	"name": "bromine",
-	"version": "1.0.0",
-	"description": "bromine",
-	"module": "index.js",
-	"type": "module",
-	"scripts": {
-		"start": "bun run index.js",
-		"dev": "astro dev",
-		"check": "astro check --write *",
-		"build": "astro build",
-		"deploy": "wrangler deploy",
-		"format": "bunx prettier . --write"
-	},
-	"dependencies": {
-		"@astrojs/check": "0.9.6",
-		"@astrojs/partytown": "^2.1.4",
-		"@astrojs/sitemap": "3.7.0",
-		"@astrojs/ts-plugin": "1.10.6",
-		"@iconify-json/ph": "^1.2.2",
-		"@iconify-json/simple-icons": "^1.2.63",
-		"@mercuryworkshop/bare-mux": "^2.1.8",
-		"@mercuryworkshop/wisp-js": "^0.4.1",
-		"@playform/compress": "^0.1.9",
-		"@tailwindcss/vite": "^4.1.18",
-		"astro": "5.16.15",
-		"astro-icon": "^1.1.5",
-		"express": "^5.2.1",
-		"tailwindcss": "^4.1.18",
-		"typescript": "^5.9.3"
-	},
-	"trustedDependencies": [
-		"@tailwindcss/oxide",
-		"bufferutil",
-		"esbuild",
-		"sharp"
-	],
-	"devDependencies": {
-		"prettier": "3.6.2",
-		"prettier-plugin-astro": "0.14.1",
-		"prettier-plugin-tailwindcss": "^0.7.2"
-	}
+  "name": "bromine",
+  "version": "1.0.0",
+  "description": "bromine",
+  "module": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "bun run index.js",
+    "dev": "astro dev",
+    "check": "astro check --write *",
+    "build": "astro build",
+    "deploy": "wrangler deploy",
+    "format": "bunx prettier . --write"
+  },
+  "dependencies": {
+    "@astrojs/check": "0.9.6",
+    "@astrojs/compiler": "^2.13.0",
+    "@astrojs/partytown": "^2.1.4",
+    "@astrojs/sitemap": "3.7.0",
+    "@astrojs/ts-plugin": "1.10.6",
+    "@iconify-json/ph": "^1.2.2",
+    "@iconify-json/simple-icons": "^1.2.68",
+    "@mercuryworkshop/bare-mux": "^2.1.8",
+    "@mercuryworkshop/wisp-js": "^0.4.1",
+    "@playform/compress": "^0.1.9",
+    "@tailwindcss/vite": "^4.1.18",
+    "astro": "^5.17.1",
+    "astro-icon": "^1.1.5",
+    "express": "^5.2.1",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3"
+  },
+  "trustedDependencies": [
+    "@tailwindcss/oxide",
+    "bufferutil",
+    "esbuild",
+    "sharp"
+  ],
+  "devDependencies": {
+    "prettier": "3.6.2",
+    "prettier-plugin-astro": "0.14.1",
+    "prettier-plugin-tailwindcss": "^0.7.2"
+  }
 }

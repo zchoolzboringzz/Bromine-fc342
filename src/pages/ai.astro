@@ -3,25 +3,26 @@ import Layout from "@/Layout.astro";
 ---
 
 <Layout>
-  <main class="w-full max-w-5xl min-w-[700px] mx-auto py-8 px-6">
-    <h1 class="text-3xl font-bold mb-6 text-center">AI Chat (Gemini)</h1>
+  <main class="mx-auto w-full max-w-5xl min-w-[700px] px-6 py-8">
+    <h1 class="mb-6 text-center text-3xl font-bold">AI Chat (Gemini)</h1>
 
     <div
       id="chat-box"
-      class="border border-muted rounded-md p-4 h-[55vh] overflow-y-auto bg-surface"
-    ></div>
+      class="border-muted bg-surface h-[55vh] overflow-y-auto rounded-md border p-4"
+    >
+    </div>
 
-    <form id="chat-form" class="flex gap-3 mt-4 items-center">
+    <form id="chat-form" class="mt-4 flex items-center gap-3">
       <input
         id="user-input"
         type="text"
-        class="flex-1 p-3 border border-muted rounded-md text-base"
+        class="border-muted flex-1 rounded-md border p-3 text-base"
         placeholder="Type a message..."
       />
 
       <button
         type="submit"
-        class="bg-overlay text-text px-5 py-2 rounded-md font-medium hover:opacity-90 transition"
+        class="bg-overlay text-text rounded-md px-5 py-2 font-medium transition hover:opacity-90"
       >
         Send
       </button>
@@ -30,7 +31,7 @@ import Layout from "@/Layout.astro";
 
   <script>
     import { fetch } from "@/utils/fetch.ts";
-    
+
     const form = document.getElementById("chat-form");
     const input = document.getElementById("user-input");
     const chatBox = document.getElementById("chat-box");
@@ -38,9 +39,7 @@ import Layout from "@/Layout.astro";
     const API_URL = "https://text.pollinations.ai/openai";
 
     // Persistent message history
-    let messages = [
-      { role: "system", content: "" }
-    ];
+    let messages = [{ role: "system", content: "" }];
 
     function addMessage(role, content) {
       const msg = document.createElement("div");
@@ -85,7 +84,8 @@ import Layout from "@/Layout.astro";
         });
 
         const data = await response.json();
-        const reply = data.choices?.[0]?.message?.content || "⚠️ No reply from model.";
+        const reply =
+          data.choices?.[0]?.message?.content || "⚠️ No reply from model.";
 
         // Replace "Thinking..." with the reply
         chatBox.lastChild.remove();
@@ -101,4 +101,3 @@ import Layout from "@/Layout.astro";
     });
   </script>
 </Layout>
-

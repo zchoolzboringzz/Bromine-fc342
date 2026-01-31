@@ -3,20 +3,20 @@ import { Icon } from "astro-icon/components";
 ---
 
 <nav class="border-overlay flex h-10 items-center border-b">
-	<div id="tabs" class="flex flex-1 items-stretch overflow-x-auto"></div>
-	<button
-		id="new-tab-btn"
-		class="hover:bg-overlay hover:text-subtle focus:ring-tertiary mr-2 rounded-md p-2 transition-colors duration-300 focus:ring-2 focus:outline-none"
-		aria-label="New Tab"
-		title="New Tab"
-	>
-		<Icon name="ph:plus-bold" class="size-5" />
-	</button>
+  <div id="tabs" class="flex flex-1 items-stretch overflow-x-auto"></div>
+  <button
+    id="new-tab-btn"
+    class="hover:bg-overlay hover:text-subtle focus:ring-tertiary mr-2 rounded-md p-2 transition-colors duration-300 focus:ring-2 focus:outline-none"
+    aria-label="New Tab"
+    title="New Tab"
+  >
+    <Icon name="ph:plus-bold" class="size-5" />
+  </button>
 </nav>
 
 <script>
-	import { newTab } from "@/utils/lethal.ts";
+  import { newTab } from "@/utils/lethal.ts";
 
-	const btn = document.getElementById("new-tab-btn");
-	btn?.addEventListener("click", () => newTab());
+  const btn = document.getElementById("new-tab-btn");
+  btn?.addEventListener("click", () => newTab());
 </script>
