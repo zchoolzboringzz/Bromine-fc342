@@ -1,17 +1,43 @@
----
-import Layout from "@/Layout.astro";
 
 ---
+import "@/styles.css";
+---
 
-<Layout title="bromine">
+<html lang="en" data-bromine_theme="">
+	<head>
+<script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
 
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+		/>
+		<meta name="version" content="2.0.0" />
+
+		<!-- Favicon -->
+		<link rel="icon" href="favicon.ico" sizes="48x48" type="image/x-icon" />
+
+
+		<title>test</title>
+
+	</head>
+
+	<body class="bg-bg flex min-h-screen flex-col">
+		<a
+			href="#main"
+			class="bg-surface hover:bg-overlay absolute top-4 left-4 z-50 -translate-y-16 transform rounded-md px-4 py-2 opacity-0 shadow-lg transition-all duration-300 ease-in-out focus:translate-y-0 focus:opacity-100"
+		>
+			Skip to main content
+		</a>
+
+		<main id="main" class="flex flex-grow flex-col">
 <div>
     <script type="text/javascript">
         aclib.runBanner({
             zoneId: '10862874',
         });
     </script>
-</div>
-
-
-</Layout>
+</div>		</main>
+	</body>
+</html>
