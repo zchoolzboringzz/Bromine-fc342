@@ -69,9 +69,22 @@ const {
 
 		<script
 			type="text/partytown"
+			src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.13.10-min.js.gz"
+		></script>
+		<script
+			type="text/partytown"
 			src="https://cdn.amplitude.com/libs/analytics-browser-2.11.1-min.js.gz"
 		></script><script type="text/partytown">
+			const sessionReplayTracking = window.sessionReplay.plugin({
+				sampleRate: 0.25,
+			});
+
+			window.amplitude.add(sessionReplayTracking);
+
 			window.amplitude.init("70a13f31c5c44eaa3becb1368fc299da", {
+				defaultTracking: {
+					sessions: true,
+				},
 				autocapture: true,
 			});
 		</script>
