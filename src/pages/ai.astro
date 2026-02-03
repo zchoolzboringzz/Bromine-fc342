@@ -3,101 +3,101 @@ import Layout from "@/Layout.astro";
 ---
 
 <Layout>
-	<main class="mx-auto w-full max-w-5xl min-w-[700px] px-6 py-8">
-		<h1 class="mb-6 text-center text-3xl font-bold">AI</h1>
+  <main class="mx-auto w-full max-w-5xl min-w-[700px] px-6 py-8">
+    <h1 class="mb-6 text-center text-3xl font-bold">AI</h1>
 
-		<div
-			id="chat-box"
-			class="border-muted bg-surface h-[55vh] overflow-y-auto rounded-md border p-4"
-		>
-		</div>
+    <div
+      id="chat-box"
+      class="border-muted bg-surface h-[55vh] overflow-y-auto rounded-md border p-4"
+    >
+    </div>
 
-		<form id="chat-form" class="mt-4 flex items-center gap-3">
-			<input
-				id="user-input"
-				type="text"
-				class="border-muted flex-1 rounded-md border p-3 text-base"
-				placeholder="Type a message..."
-			/>
+    <form id="chat-form" class="mt-4 flex items-center gap-3">
+      <input
+        id="user-input"
+        type="text"
+        class="border-muted flex-1 rounded-md border p-3 text-base"
+        placeholder="Type a message..."
+      />
 
-			<button
-				type="submit"
-				class="bg-overlay text-text rounded-md px-5 py-2 font-medium transition hover:opacity-90"
-			>
-				Send
-			</button>
-		</form>
-	</main>
+      <button
+        type="submit"
+        class="bg-overlay text-text rounded-md px-5 py-2 font-medium transition hover:opacity-90"
+      >
+        Send
+      </button>
+    </form>
+  </main>
 
-	<script>
-		import { fetch } from "@/utils/fetch.ts";
+  <script>
+    import { fetch } from "@/utils/fetch.ts";
 
-		const form = document.getElementById("chat-form");
-		const input = document.getElementById("user-input");
-		const chatBox = document.getElementById("chat-box");
+    const form = document.getElementById("chat-form");
+    const input = document.getElementById("user-input");
+    const chatBox = document.getElementById("chat-box");
 
-		const API_URL = "https://text.pollinations.ai/openai";
+    const API_URL = "https://text.pollinations.ai/openai";
 
-		// Persistent message history
-		let messages = [{ role: "system", content: "" }];
+    // Persistent message history
+    let messages = [{ role: "system", content: "" }];
 
-		function addMessage(role, content) {
-			const msg = document.createElement("div");
-			msg.className =
-				role === "user" ? "text-right mb-2" : "text-left mb-2 text-text";
+    function addMessage(role, content) {
+      const msg = document.createElement("div");
+      msg.className =
+        role === "user" ? "text-right mb-2" : "text-left mb-2 text-text";
 
-			const span = document.createElement("span");
-			span.className =
-				"inline-block px-3 py-2 rounded-lg bg-overlay text-text whitespace-pre-wrap";
-			span.textContent = content.trim();
+      const span = document.createElement("span");
+      span.className =
+        "inline-block px-3 py-2 rounded-lg bg-overlay text-text whitespace-pre-wrap";
+      span.textContent = content.trim();
 
-			msg.appendChild(span);
-			chatBox.appendChild(msg);
-			chatBox.scrollTop = chatBox.scrollHeight;
-		}
+      msg.appendChild(span);
+      chatBox.appendChild(msg);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
 
-		form.addEventListener("submit", async (e) => {
-			e.preventDefault();
-			const userText = input.value.trim();
-			if (!userText) return;
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const userText = input.value.trim();
+      if (!userText) return;
 
-			// Display user message
-			addMessage("user", userText);
-			input.value = "";
+      // Display user message
+      addMessage("user", userText);
+      input.value = "";
 
-			// Add to conversation history
-			messages.push({ role: "user", content: userText });
+      // Add to conversation history
+      messages.push({ role: "user", content: userText });
 
-			// Temporary "thinking" placeholder
-			addMessage("assistant", "Thinking...");
+      // Temporary "thinking" placeholder
+      addMessage("assistant", "Thinking...");
 
-			try {
-				const response = await fetch(API_URL, {
-					method: "POST",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify({
-						model: "openai",
-						messages: messages,
-						temperature: 1.0,
-						max_tokens: 200,
-					}),
-				});
+      try {
+        const response = await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            model: "openai",
+            messages: messages,
+            temperature: 1.0,
+            max_tokens: 200,
+          }),
+        });
 
-				const data = await response.json();
-				const reply =
-					data.choices?.[0]?.message?.content || "⚠️ No reply from model.";
+        const data = await response.json();
+        const reply =
+          data.choices?.[0]?.message?.content || "⚠️ No reply from model.";
 
-				// Replace "Thinking..." with the reply
-				chatBox.lastChild.remove();
-				addMessage("assistant", reply);
+        // Replace "Thinking..." with the reply
+        chatBox.lastChild.remove();
+        addMessage("assistant", reply);
 
-				// Store assistant reply in history
-				messages.push({ role: "assistant", content: reply });
-			} catch (error) {
-				chatBox.lastChild.remove();
-				addMessage("assistant", "⚠️ Error connecting to Pollinations API.");
-				console.error(error);
-			}
-		});
-	</script>
+        // Store assistant reply in history
+        messages.push({ role: "assistant", content: reply });
+      } catch (error) {
+        chatBox.lastChild.remove();
+        addMessage("assistant", "⚠️ Error connecting to Pollinations API.");
+        console.error(error);
+      }
+    });
+  </script>
 </Layout>

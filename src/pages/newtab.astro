@@ -3,85 +3,85 @@ import Layout from "@/Layout.astro";
 ---
 
 <Layout title="bromine">
-	<script src="/crasm/scramjet.all.js" async defer is:inline></script>
-	<div
-		class="flex flex-grow flex-col items-center justify-center px-4 py-12 text-center"
-	>
-		<h1 class="mb-2 text-4xl font-bold">Bromine</h1>
-		<span class="mb-6 text-lg opacity-80">Unrestricted browsing</span>
+  <script src="/crasm/scramjet.all.js" async defer is:inline></script>
+  <div
+    class="flex flex-grow flex-col items-center justify-center px-4 py-12 text-center"
+  >
+    <h1 class="mb-2 text-4xl font-bold">Bromine</h1>
+    <span class="mb-6 text-lg opacity-80">Unrestricted browsing</span>
 
-		<form id="form" class="mb-6 flex w-full justify-center">
-			<input
-				autofocus
-				spellcheck="false"
-				autocomplete="off"
-				id="address"
-				type="text"
-				class="border-border bg-bg/60 w-full max-w-md rounded-lg border p-2 text-center backdrop-blur-md placeholder:opacity-60"
-				required
-				placeholder="Search the world wide web"
-			/>
-		</form>
-		<!-- 	<div id="shortcuts" class="flex gap-4"> -->
-		<!-- 		<img -->
-		<!-- 			class="size-16 cursor-pointer rounded-lg transition-transform hover:scale-105" -->
-		<!-- 			src="/assets/geforce-now.avif" -->
-		<!-- 			data-url="https://play.geforcenow.com/mall/" -->
-		<!-- 		/> -->
-		<!-- 		<img -->
-		<!-- 			class="size-16 cursor-pointer rounded-lg transition-transform hover:scale-105" -->
-		<!-- 			src="/assets/cloudmoon.avif" -->
-		<!-- 			data-url="https://web.cloudmoonapp.com/" -->
-		<!-- 		/> -->
-		<!-- 	</div> -->
-		<!-- </div> -->
-	</div>
+    <form id="form" class="mb-6 flex w-full justify-center">
+      <input
+        autofocus
+        spellcheck="false"
+        autocomplete="off"
+        id="address"
+        type="text"
+        class="border-border bg-bg/60 w-full max-w-md rounded-lg border p-2 text-center backdrop-blur-md placeholder:opacity-60"
+        required
+        placeholder="Search the world wide web"
+      />
+    </form>
+    <!-- 	<div id="shortcuts" class="flex gap-4"> -->
+    <!-- 		<img -->
+    <!-- 			class="size-16 cursor-pointer rounded-lg transition-transform hover:scale-105" -->
+    <!-- 			src="/assets/geforce-now.avif" -->
+    <!-- 			data-url="https://play.geforcenow.com/mall/" -->
+    <!-- 		/> -->
+    <!-- 		<img -->
+    <!-- 			class="size-16 cursor-pointer rounded-lg transition-transform hover:scale-105" -->
+    <!-- 			src="/assets/cloudmoon.avif" -->
+    <!-- 			data-url="https://web.cloudmoonapp.com/" -->
+    <!-- 		/> -->
+    <!-- 	</div> -->
+    <!-- </div> -->
+  </div>
 
-	<script
-		async="async"
-		data-cfasync="false"
-		src="//learningbuildingroughly.com/b113e1888ef757be96cdcc722c0f31c8/invoke.js"
-	></script>
-	<div id="container-b113e1888ef757be96cdcc722c0f31c8"></div>
+  <script
+    async="async"
+    data-cfasync="false"
+    src="//learningbuildingroughly.com/b113e1888ef757be96cdcc722c0f31c8/invoke.js"
+  ></script>
+  <div id="container-b113e1888ef757be96cdcc722c0f31c8"></div>
 
-	<script>
-		const form = document.getElementById("form");
-		const input = document.getElementById("address");
-		const parentInput = window.parent.document.querySelector("input#address");
-		const parentForm = window.parent.document.querySelector("form#form");
-		// const divitems = document.getElementById("shortcuts");
+  <script>
+    const form = document.getElementById("form");
+    const input = document.getElementById("address");
+    const parentInput = window.parent.document.querySelector("input#address");
+    const parentForm = window.parent.document.querySelector("form#form");
+    // const divitems = document.getElementById("shortcuts");
 
-		form?.addEventListener("submit", async (e) => {
-			e.preventDefault();
-			parentInput.value = input.value;
-			parentForm.dispatchEvent(new CustomEvent("submit"));
-		});
+    form?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      parentInput.value = input.value;
+      parentForm.dispatchEvent(new CustomEvent("submit"));
+    });
 
-		// Theme + Wallpaper Handling
-		const applyTheme = () => {
-			document.body.dataset.bromine_theme =
-				localStorage.getItem("bromine_theme");
-		};
+    // Theme + Wallpaper Handling
+    const applyTheme = () => {
+      document.body.dataset.bromine_theme =
+        localStorage.getItem("bromine_theme");
+    };
 
-		// for (const item of divitems.children) {
-		// 	item.addEventListener("click", () => {
-		// 		parentInput.value = item.dataset.url;
-		// 		parentForm.dispatchEvent(new CustomEvent("submit"));
-		// 	});
-		// }
-		applyTheme();
+    // for (const item of divitems.children) {
+    // 	item.addEventListener("click", () => {
+    // 		parentInput.value = item.dataset.url;
+    // 		parentForm.dispatchEvent(new CustomEvent("submit"));
+    // 	});
+    // }
+    applyTheme();
 
-		window.addEventListener("message", (event) => {
-			const msg = event.data;
-			if (!msg || !msg.type) return;
+    window.addEventListener("message", (event) => {
+      const msg = event.data;
+      if (!msg || !msg.type) return;
 
-			switch (msg.type) {
-				case "bromine_theme_changed":
-					applyTheme();
-					break;
-				default:
-					document.dispatchEvent(new CustomEvent(msg.type));
-			}
-		});
-	</script>
+      switch (msg.type) {
+        case "bromine_theme_changed":
+          applyTheme();
+          break;
+        default:
+          document.dispatchEvent(new CustomEvent(msg.type));
+      }
+    });
+  </script>
 </Layout>
