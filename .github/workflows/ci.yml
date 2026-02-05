@@ -6,7 +6,7 @@ on:
     branches: [main]
 
 permissions:
-  contents: read
+  contents: read. write
   pages: write
   id-token: write
 
@@ -16,7 +16,7 @@ env:
 jobs:
   build:
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -46,7 +46,7 @@ jobs:
   dockerci:
     name: Docker CI
     needs: [build]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     steps:
       - uses: actions/checkout@v4
 
@@ -80,7 +80,7 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
     needs: [build]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     concurrency:
       group: "pages"
       cancel-in-progress: false
@@ -88,3 +88,17 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+
+  changelog:
+    name: Changelog
+    runs-on: ubuntu-slim
+
+    steps:
+      - name: Conventional Changelog Action
+        uses: TriPSs/conventional-changelog-action@v5
+        with:
+          github-token: ${{ secrets.github_token }}
+
+
+
+
