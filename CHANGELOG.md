@@ -1,4 +1,4 @@
-# [1.1.0](https://github.com/Hydra-Network/Bromine/compare/v2.0.5...v1.1.0) (2026-02-05)
+# [2.1.5](https://github.com/Hydra-Network/Bromine/compare/v2.0.5...v1.1.0) (2026-02-05)
 
 
 ### Bug Fixes
