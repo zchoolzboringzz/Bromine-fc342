@@ -6,7 +6,7 @@ on:
     branches: [main]
 
 permissions:
-  contents: read. write
+  contents: read, write
   pages: write
   id-token: write
 
