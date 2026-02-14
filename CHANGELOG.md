@@ -1,4 +1,13 @@
-# [2.1.5](https://github.com/Hydra-Network/Bromine/compare/v2.0.5...v1.1.0) (2026-02-05)
+# [2.2.0](https://github.com/Hydra-Network/Bromine/compare/v1.1.0...v2.2.0) (2026-02-14)
+
+
+### Features
+
+* **ui:** informs the user about geforce now support ([6985a78](https://github.com/Hydra-Network/Bromine/commit/6985a785a5f8c18232813877394283273ec16e24))
+
+
+
+# [1.1.0](https://github.com/Hydra-Network/Bromine/compare/v2.0.5...v1.1.0) (2026-02-05)
 
 
 ### Bug Fixes
