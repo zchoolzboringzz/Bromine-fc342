@@ -1,3 +1,12 @@
+# [2.3.0](https://github.com/Hydra-Network/Bromine/compare/v2.2.1...v2.3.0) (2026-02-24)
+
+
+### Features
+
+* new status page ([9711429](https://github.com/Hydra-Network/Bromine/commit/9711429356d14ca7fa7a212aa193390a1bcdb607))
+
+
+
 ## [2.2.1](https://github.com/Hydra-Network/Bromine/compare/v2.2.0...v2.2.1) (2026-02-23)
 
 
@@ -126,29 +135,6 @@
 
 
 ## [2.0.5](https://github.com/Hydra-Network/Bromine/compare/v2.0.0...v2.0.5) (2025-08-05)
-
-
-### Bug Fixes
-
-* about blank ([9cac730](https://github.com/Hydra-Network/Bromine/commit/9cac7302bc170450c3282b17c646397da00802eb))
-* bruhhhh ([d6ddd4a](https://github.com/Hydra-Network/Bromine/commit/d6ddd4a641279473a19d31b6c6970a590d7be458))
-* bun lock file ([22458f0](https://github.com/Hydra-Network/Bromine/commit/22458f0e363a7d144201b27a47bc5eec8778890a))
-* bun lock file ([790f9eb](https://github.com/Hydra-Network/Bromine/commit/790f9ebf7111b14b53f9df8290622e0ab1a18791))
-* forgot to make stealth mode work ([55baff4](https://github.com/Hydra-Network/Bromine/commit/55baff4540e309f8dc5dcbec55ca293f6566ed55))
-* new tab theming issues ([f40db19](https://github.com/Hydra-Network/Bromine/commit/f40db19dc8bffea6fbdca4b19b9ad2405351fdbe))
-* some wierd things ([13f3a31](https://github.com/Hydra-Network/Bromine/commit/13f3a31bf95625ab150cda92a979b6c196239f1c))
-* steal mode ([891e4f9](https://github.com/Hydra-Network/Bromine/commit/891e4f924d194a8de59427e1963c85e2de9117d1))
-* suggestions ([d6f3aa7](https://github.com/Hydra-Network/Bromine/commit/d6f3aa7146ea70e4aff9f351894a4eef14990a1a))
-* tabs go monkey when quikcly switching ([4e85b1e](https://github.com/Hydra-Network/Bromine/commit/4e85b1e7dd9c88510db8be04b310efa172702894))
-* things ([79fc1d6](https://github.com/Hydra-Network/Bromine/commit/79fc1d653db16bd9a64fcfdaf26d1b8125af6b83))
-* wierd scroll bar appears ([d8e473e](https://github.com/Hydra-Network/Bromine/commit/d8e473e8c33bd00258a9b29989203c00edf4e381))
-* wierd url change ([db1b3a2](https://github.com/Hydra-Network/Bromine/commit/db1b3a2ecca8734214290cef60d0bca723d4e8e0))
-* wierd uv issue ([d7624d4](https://github.com/Hydra-Network/Bromine/commit/d7624d45660303d21db674855c695b626e1e6960))
-
-
-### Features
-
-* Improve website responsiveness ([2575b99](https://github.com/Hydra-Network/Bromine/commit/2575b996ae28b5d5a6b89eb7ea55481f17682328))
 
 
 
