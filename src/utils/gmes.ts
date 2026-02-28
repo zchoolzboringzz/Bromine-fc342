@@ -1,12 +1,12 @@
 let gmesData = [];
 
 try {
-  const response = await fetch('https://cdn.jsdelivr.net/gh/Hydra-Network/hydra-assets@main/gmes.json');
-  if (response.ok) {
-    gmesData = await response.json();
-  }
+	const response = await fetch('https://cdn.jsdelivr.net/gh/Hydra-Network/hydra-assets@main/gmes.json');
+	if (response.ok) {
+		gmesData = await response.json();
+	}
 } catch (error) {
-  console.error("Failed to fetch games:", error);
+	console.error("Failed to fetch games:", error);
 }
 
 
@@ -20,7 +20,7 @@ const gmes_text = FILTER_OPTIMIZE_ON ? "gᾰmes" : "games";
 
 	// --- Infinite Scroll State ---
 	let currentPage = 1;
-	const itemsPerPage = 20;
+	const itemsPerPage = 30;
 	let currentFilteredGmes = [];
 	let observer = null;
 
@@ -74,24 +74,29 @@ const gmes_text = FILTER_OPTIMIZE_ON ? "gᾰmes" : "games";
 
 	currentFilteredGmes = allGmes;
 
+
 	const createGmeCard = (gme) => {
 		const thumb_url = gme.thumb
 			? `https://raw.githubusercontent.com/Hydra-Network/hydra-assets/main/${gme.thumb}`
 			: null;
 		const thumb_html = thumb_url
-			? `<img src="${thumb_url}" alt="${gme.title}" class="w-full h-40 object-cover rounded-lg mb-2" loading="lazy"/>`
-			: `<div class="w-full h-40 rounded-lg bg-surface-800 mb-2 flex items-center justify-center"><p class="text-text-500">No Image</p></div>`;
+			? `<img src="${thumb_url}" alt="${gme.title}" class="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:scale-110" loading="lazy"/>`
+			: `<div class="w-full h-full rounded-lg bg-surface-800 flex items-center justify-center"><p class="text-text-500">No Image</p></div>`;
 
 		return `
 			<div
 				onclick="opengme('${gme.file_name}', '${gme.title}', '${gme.frame}')"
-				class="bg-bg border border-overlay rounded-xl p-3 m-2 inline-block w-64 text-center shadow-sm transition-transform duration-200 hover:scale-105 cursor-pointer"
+				class="group relative inline-block w-64 h-40 m-2 cursor-pointer overflow-hidden rounded-xl border border-overlay bg-bg shadow-sm"
 			>
 				${thumb_html}
-				<h3 class="mt-2 font-medium truncate">${gme.title}</h3>
+				<div class="absolute inset-0 flex items-start justify-start p-3 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+					<h3 class="text-white text-lg font-bold truncate p-2">${gme.title}</h3>
+				</div>
 			</div>
 		`;
 	};
+
+
 
 	const renderNextBatch = () => {
 		const startIndex = (currentPage - 1) * itemsPerPage;
