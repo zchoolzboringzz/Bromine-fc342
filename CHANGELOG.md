@@ -1,3 +1,12 @@
+# [2.4.0](https://github.com/Hydra-Network/Bromine/compare/v2.3.0...v2.4.0) (2026-02-28)
+
+
+### Features
+
+* update for new change sin hydra-assets ([ff33e7e](https://github.com/Hydra-Network/Bromine/commit/ff33e7e1a6376f7b23b32bb30deae07a203be48a))
+
+
+
 # [2.3.0](https://github.com/Hydra-Network/Bromine/compare/v2.2.1...v2.3.0) (2026-02-24)
 
 
@@ -131,10 +140,6 @@
 * Revert "Update gmes.astro" ([8578101](https://github.com/Hydra-Network/Bromine/commit/857810145ce489b728390eca58e92c685a5d8f92))
 * Revert "Update 404.astro" ([1ccb8c0](https://github.com/Hydra-Network/Bromine/commit/1ccb8c01496ea4cf63ce506fe8d6138115fd2a50))
 * Revert "Update Settings.astro" ([b61984b](https://github.com/Hydra-Network/Bromine/commit/b61984bf7761877aca5303fc795517345bdb7ab5))
-
-
-
-## [2.0.5](https://github.com/Hydra-Network/Bromine/compare/v2.0.0...v2.0.5) (2025-08-05)
 
 
 
