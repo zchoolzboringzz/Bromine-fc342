@@ -1,4 +1,15 @@
-import gmesData from "@/data/gmes.json";
+let gmesData = [];
+
+try {
+  const response = await fetch('https://cdn.jsdelivr.net/gh/Hydra-Network/hydra-assets@main/gmes.json');
+  if (response.ok) {
+    gmesData = await response.json();
+  }
+} catch (error) {
+  console.error("Failed to fetch games:", error);
+}
+
+
 
 const FILTER_OPTIMIZE_ON = import.meta.env.PUBLIC_FILTER_OPTIMIZE === "true";
 const gmes_text = FILTER_OPTIMIZE_ON ? "gᾰmes" : "games";
