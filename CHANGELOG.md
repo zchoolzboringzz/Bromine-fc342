@@ -1,3 +1,12 @@
+## [2.5.1](https://github.com/Hydra-Network/Bromine/compare/v2.5.0...v2.5.1) (2026-02-28)
+
+
+### Bug Fixes
+
+* infinite scroll ([ef4a2c2](https://github.com/Hydra-Network/Bromine/commit/ef4a2c29ac277663888cb005df69bce818e53a14))
+
+
+
 # [2.5.0](https://github.com/Hydra-Network/Bromine/compare/v2.4.0...v2.5.0) (2026-02-28)
 
 
@@ -31,15 +40,6 @@
 ### Bug Fixes
 
 * wisp ([d81f5e8](https://github.com/Hydra-Network/Bromine/commit/d81f5e8deeaaf9b774b8643e237ce63893406a80))
-
-
-
-# [2.2.0](https://github.com/Hydra-Network/Bromine/compare/v1.1.0...v2.2.0) (2026-02-14)
-
-
-### Features
-
-* **ui:** informs the user about geforce now support ([6985a78](https://github.com/Hydra-Network/Bromine/commit/6985a785a5f8c18232813877394283273ec16e24))
 
 
 
