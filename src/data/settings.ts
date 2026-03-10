@@ -148,7 +148,7 @@ export const settingsData = {
           type: "text",
           defaultValue: HOST_WISP
             ? "customwispblahblahblah"
-            : "wss://wisp.galxy.autos/",
+            : "wss://wisp.galxy.it.com/",
           placeholder: "wss://wisp.pro/",
           description:
             "The transport server used. This requires a '/' at the end. Shout out Rogo for giving us our default wisp server.",
