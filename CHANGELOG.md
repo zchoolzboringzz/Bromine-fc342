@@ -1,3 +1,12 @@
+## [2.5.2](https://github.com/Hydra-Network/Bromine/compare/v2.5.1...v2.5.2) (2026-03-17)
+
+
+### Bug Fixes
+
+* we still using galxy.autos for some reason ([6c3ca5d](https://github.com/Hydra-Network/Bromine/commit/6c3ca5dd669cd7cae1633561c3991226e80281cb))
+
+
+
 ## [2.5.1](https://github.com/Hydra-Network/Bromine/compare/v2.5.0...v2.5.1) (2026-02-28)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * new status page ([9711429](https://github.com/Hydra-Network/Bromine/commit/9711429356d14ca7fa7a212aa193390a1bcdb607))
-
-
-
-## [2.2.1](https://github.com/Hydra-Network/Bromine/compare/v2.2.0...v2.2.1) (2026-02-23)
-
-
-### Bug Fixes
-
-* wisp ([d81f5e8](https://github.com/Hydra-Network/Bromine/commit/d81f5e8deeaaf9b774b8643e237ce63893406a80))
 
 
 
